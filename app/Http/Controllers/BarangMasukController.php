@@ -151,18 +151,6 @@ class BarangMasukController extends Controller
         //save edit
         $masuk->save();
 
-        //edit data transaksi
-        $transaksi = Transaksi::findOrFail($id);
-        $transaksi->jenis = 'Barang Masuk';
-        $transaksi->tanggal_transaksi = $masuk->tanggal_masuk;
-        $transaksi->nama_barang = $masuk->barang_id;
-        $transaksi->qty = $masuk->qty;
-        $transaksi->pelaku = $masuk->user_id;
-        $transaksi->save();
-        Session::flash("flash_notification", [
-            "level" => "success",
-            "message" => "Berhasil mengedit barang masuk $barang->nama_barang"
-        ]);
         return redirect()->route('barang-masuk.index');
     }
 

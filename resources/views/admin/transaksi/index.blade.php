@@ -46,7 +46,9 @@
                         <th class="text-center">Nama Barang</th>
                         <th class="text-center">Qty</th>
                         <th class="text-center">Penerima / Pengeluar</th>
+                        @role('admin')
                         <th class="text-center">Aksi</th>
+                        @endrole
                     </tr>
                 </thead>
                 <tbody>
@@ -61,6 +63,7 @@
                         <td class="text-center">{{$data->barang->nama_barang}}</td>
                         <td class="text-center">{{$data->qty}}</td>
                         <td class="text-center">{{$data->user->name}}</td>
+                        @role('admin')
                         <td class="text-center">
                             <form class="text-center" action="{{route('transaksi.destroy',$data->id)}}" method="post">
                                 @method('delete')
@@ -68,6 +71,7 @@
                                     <button type="submit" class="btn btn-danger fa fa-trash" onclick="return confirm('Apakah anda yakin menghapus')"></button>
                             </form>
                         </td>
+                        @endrole
                     </tr>
                     @endforeach
                 </tbody>

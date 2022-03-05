@@ -38,7 +38,7 @@
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input value={{$user->password}} type="password" name="password" class="form-control" placeholder="Password">
+                    <input type="password" name="password" class="form-control" placeholder="Password">
                 </div>
                 <div class="form-group">
                     <label for="">Select Role</label>

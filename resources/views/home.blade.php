@@ -92,7 +92,7 @@
 						<div id="calendar"></div>
 					</div>
 				</div>
-				
+
 			</div><!--/.col-->
 <br>
 @endsection

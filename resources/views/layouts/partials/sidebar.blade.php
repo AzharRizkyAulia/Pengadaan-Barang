@@ -10,11 +10,6 @@
         <div class="clear"></div>
     </div>
     <div class="divider"></div>
-    <form role="search">
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-        </div>
-    </form>
     <ul class="nav menu">
         <li class="{{ Request::is('home')? "active":"" }}"><a href="/home"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
         <li class="{{ Request::is('supplier')? "active":"" }}"><a href="/pengadaanbarang/supplier"><em class="fa fa-users">&nbsp;</em> Supplier</a></li>
@@ -35,15 +30,15 @@
         </li>
         <li class="{{ Request::is('barang-masuk')? "active":"" }}"><a href="/pengadaanbarang/barang-masuk" ><em class="fa fa-download">&nbsp;</em> Barang Masuk</a></li>
         <li  class="{{ Request::is('barang-keluar')? "active":"" }}"><a href="/pengadaanbarang/barang-keluar"><em class="fa fa-upload">&nbsp;</em> Barang Keluar</a></li>
-        <li  class="{{ Request::is('transaksi')? "active":"" }}"><a href="/pengadaanbarang/transaksi"><em class="fa fa-shopping-bag">&nbsp;</em> Transaksi</a></li>
+        <li  class="{{ Request::is('transaksi')? "active":"" }}"><a href="/pengadaanbarang/transaksi"><em class="fa fa-shopping-bag">&nbsp;</em> Riwayat Transaksi</a></li>
         <li  class="{{ Request::is('cetak-laporan')? "active":"" }}"><a href="/pengadaanbarang/cetak-laporan"><em class="fa fa-print">&nbsp;</em> Cetak Laporan</a></li>
-        @role('admin')
+
         <li  class="{{ Request::is('user-management')? "active":"" }}"><a href="/pengadaanbarang/user-management"><em class="fa fa-user">&nbsp;</em> User Management</a></li>
-        @endrole
+
         <!-- Logout -->
                 <li class=""><a href="{{ route('logout') }}" onclick="event.preventDefault();
                          document.getElementById('logout-form').submit();">
-                        <span> Logout </span><em class="fa fa-sign-out">&nbsp;</em>
+                        <em class="fa fa-sign-out">&nbsp;</em><span> Logout </span>
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
